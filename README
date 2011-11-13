@@ -1,0 +1,14 @@
+N Queens
+========
+
+Right now it just prints the solutions out. Eventually it will save board states and account for rotations and reflections.
+
+usage:
+
+    python nqueens.py <number of queens>
+
+Example:
+
+    python nqueens.py 4
+
+_Note: I was completely sober (seriously, @mythmon can confirm) while writing this code._
