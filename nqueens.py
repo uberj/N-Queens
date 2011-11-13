@@ -1,26 +1,33 @@
 import sys
 import pdb
 import unittest
+import copy
 
 """
 Solve nqueens for a generic NxN board
 """
+solutions = []
 def solve_nqueens( n ):
     board = [ [0]*n for i in range(n) ]
-    do_nqueens( 0, n, board )
+    state = []
+    do_nqueens( 0, n, board, state )
 
 """
 Helper function.
 """
-def do_nqueens( row, n, board ):
+def do_nqueens( row, n, board, state ):
     if row >= n:
-        pb( board, n )
+        solutions.append(copy.deepcopy(state))
         return
     for col in range(n):
         if valid_move( row, col, board, n ):
             mark( row, col, board )
-            do_nqueens( row+1, n, board )
+            state.append((row,col))
+
+            do_nqueens( row+1, n, board, state )
+
             unmark( row, col, board )
+            state.remove((row,col))
 
 def mark( row, col, board ):
     board[row][col] = 1
@@ -94,6 +101,7 @@ def pb( board, n ):
 
 if __name__ == "__main__":
     solve_nqueens(int(sys.argv[1]))
+    print solutions
 
 
 
