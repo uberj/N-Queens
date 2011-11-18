@@ -2,6 +2,11 @@ import sys
 import pdb
 import unittest
 import copy
+import pprint
+from board_utils import *
+from rr import *
+
+pp = pprint.PrettyPrinter(indent=4)
 
 """
 Solve nqueens for a generic NxN board
@@ -100,8 +105,17 @@ def pb( board, n ):
 
 
 if __name__ == "__main__":
+    n = int(sys.argv[1])
     solve_nqueens(int(sys.argv[1]))
-    print solutions
-
-
+    meta_solutions = []
+    uniq_solutions = []
+    for solution in solutions:
+        s_board = coord_to_board(solution)
+        if solution not in meta_solutions:
+            uniq_solutions.append(solutions)
+            meta_solutions += gen_all_rr(s_board,n)
+            meta_solutions.append(solution)
+        #print gen_all_rr(s_board, n)
+    print len(uniq_solutions)
+    print "There were "+str(len(uniq_solutions))+" unique soltions."
 
