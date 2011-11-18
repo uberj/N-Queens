@@ -19,7 +19,7 @@ explain_homework(){
     echo "What follows is the number of unique solutions to the N-Queens problem calculated"
     echo "for a N X N board. N starts at 1 and goes up to 9."
     echo
-    echo "Enjoy the show!"
+    echo "Enjoy the show! (This report was brought to you by BASH)."
     echo
 }
 

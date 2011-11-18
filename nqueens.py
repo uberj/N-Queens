@@ -28,9 +28,8 @@ def do_nqueens( row, n, board, state ):
         if valid_move( row, col, board, n ):
             mark( row, col, board )
             state.append((row,col))
-
+            # Again!
             do_nqueens( row+1, n, board, state )
-
             unmark( row, col, board )
             state.remove((row,col))
 
