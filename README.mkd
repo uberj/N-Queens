@@ -1,7 +1,7 @@
 N Queens
 ========
 
-Right now it just prints the solutions out. Eventually it will save board states and account for rotations and reflections.
+Calculate the unique number of solutions to the N-Queens problem for an NxN board.
 
 usage:
 
@@ -12,3 +12,8 @@ Example:
     python nqueens.py 4
 
 _Note: I was completely sober (seriously, @mythmon can confirm) while writing this code._
+
+###Report
+If you want to see the report run the `gen_report.sh` script.
+
+    ./gen_report.sh
