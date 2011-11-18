@@ -106,7 +106,7 @@ def pb( board, n ):
 
 if __name__ == "__main__":
     n = int(sys.argv[1])
-    solve_nqueens(int(sys.argv[1]))
+    solve_nqueens(n)
     meta_solutions = []
     uniq_solutions = []
     for solution in solutions:
@@ -115,7 +115,5 @@ if __name__ == "__main__":
             uniq_solutions.append(solutions)
             meta_solutions += gen_all_rr(s_board,n)
             meta_solutions.append(solution)
-        #print gen_all_rr(s_board, n)
-    print len(uniq_solutions)
-    print "There were "+str(len(uniq_solutions))+" unique soltions."
+    print "There were %s unique solutions for a %s x %s board." % (len(uniq_solutions),n,n)
 
