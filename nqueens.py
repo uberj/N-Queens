@@ -45,9 +45,8 @@ valid move.
 """
 def valid_move( row, col, board, n ):
     col_val = check_col( row, col, board, n )
-    row_val = check_row( row, col, board, n )
     diags_val = check_diags( row, col, board, n )
-    return not (col_val or row_val or diags_val)
+    return not (col_val or diags_val)
 
 
 """
@@ -114,5 +113,6 @@ if __name__ == "__main__":
             uniq_solutions.append(solutions)
             meta_solutions += gen_all_rr(s_board,n)
             meta_solutions.append(solution)
+
     print "There were %s unique solutions for a %s x %s board." % (len(uniq_solutions),n,n)
 
